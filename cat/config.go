@@ -62,7 +62,10 @@ func loadConfigFromLocalFile(filename string) (data []byte, err error) {
 	return
 }
 
-func loadConfig() (data []byte, err error) {
+func loadConfig(xmlFilePath string) (data []byte, err error) {
+	if xmlFilePath == "" {
+		xmlFilePath = defaultXmlFile
+	}
 	if data, err = loadConfigFromLocalFile(defaultXmlFile); err != nil {
 		logger.Error("Failed to load local config file.")
 		return
@@ -88,7 +91,7 @@ func parseXMLConfig(data []byte) (err error) {
 	return
 }
 
-func (config *Config) Init(domain string) (err error) {
+func (config *Config) Init(domain string, xmlFilePath string) (err error) {
 	config.domain = domain
 
 	defer func() {
@@ -120,7 +123,7 @@ func (config *Config) Init(domain string) (err error) {
 	}
 
 	var data []byte
-	if data, err = loadConfig(); err != nil {
+	if data, err = loadConfig(xmlFilePath); err != nil {
 		return
 	}
 

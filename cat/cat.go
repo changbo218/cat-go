@@ -9,8 +9,8 @@ var enabled uint32 = 0
 
 var started uint32 = 0
 
-func Init(domain string) {
-	if err := config.Init(domain); err != nil {
+func Init(domain string, xmlFilePath string) {
+	if err := config.Init(domain, xmlFilePath); err != nil {
 		logger.Warning("Cat initialize failed.")
 		return
 	}
