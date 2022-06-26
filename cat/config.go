@@ -66,7 +66,7 @@ func loadConfig(xmlFilePath string) (data []byte, err error) {
 	if xmlFilePath == "" {
 		xmlFilePath = defaultXmlFile
 	}
-	if data, err = loadConfigFromLocalFile(defaultXmlFile); err != nil {
+	if data, err = loadConfigFromLocalFile(xmlFilePath); err != nil {
 		logger.Error("Failed to load local config file.")
 		return
 	}
