@@ -3,7 +3,7 @@ package cat
 import (
 	"time"
 
-	"github.com/Meituan-Dianping/cat-go/message"
+	"github.com/changbo218/cat-go/message"
 )
 
 func NewTransaction(mtype, name string) message.Transactor {

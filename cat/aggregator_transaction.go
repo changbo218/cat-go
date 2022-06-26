@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/Meituan-Dianping/cat-go/message"
+	"github.com/changbo218/cat-go/message"
 )
 
 type transactionData struct {
